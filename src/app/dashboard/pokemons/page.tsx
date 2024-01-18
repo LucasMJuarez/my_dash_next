@@ -1,4 +1,4 @@
-import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/app/pokemons"
+import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons"
 import Image from "next/image"
 
 const getPokemons = async (limit = 10, offset = 0): Promise<SimplePokemon[]> => {
@@ -10,7 +10,7 @@ const getPokemons = async (limit = 10, offset = 0): Promise<SimplePokemon[]> => 
             id: pokemon.url.split("/")[6], // https://pokeapi.co/api/v2/pokemon/1/
             name: pokemon.name,
         }});
-        throw new Error("Esto es un error que no deberia de suceder ")
+        //throw new Error("Esto es un error que no deberia de suceder ")
     return pokemons
 }
 
