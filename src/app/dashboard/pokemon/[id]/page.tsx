@@ -1,9 +1,18 @@
 import { Pokemon } from "@/pokemons";
+import { Metadata } from "next/types";
 
 interface Props {
     params: { id: string };
 }
 
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { id, name } = await getPokemons(params.id)
+    return {
+        title: `#${id}- ${name}`,
+        description: `Pokemon ${name}`,
+    }
+}
 
 const getPokemons = async (id: string): Promise<Pokemon> => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
