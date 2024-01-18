@@ -1,4 +1,4 @@
-import { SimplePokemon } from '@/app/pokemons'
+import { SimplePokemon } from '@/pokemons'
 import React from 'react'
 import { PokemonCard } from './PokemonCard';
 
