@@ -7,11 +7,13 @@ interface PokemonsState {
 }
 
 const getInitialState = (): PokemonsState => {
+    //if(typeof localStorage === 'undefined') return {}
     const favorites = JSON.parse((localStorage.getItem('favorite-pokemons')) ?? '{}');
     return favorites;
 }
+
 const initialState: PokemonsState = {
-    ...getInitialState()
+    //...getInitialState()
     // '1': { id: '1', name: 'bulbasaur' },
     // '3': { id: '3', name: 'venusaur' },
     // '10': { id: '10', name: 'caterpie' },
